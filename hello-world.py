@@ -2,28 +2,32 @@ import pygame
 import sys
 
 pygame.init()
+pygame.mixer.init()
+pygame.mouse.set_visible(False)
 
 windowSize = (800, 600)
 
 screen = pygame.display.set_mode(windowSize)
 
-myriadProFont = pygame.font.SysFont("Myriad Pro", 48)
-
-helloWorld = myriadProFont.render("Hello World!", 1, (255, 0, 0), (255, 255, 255))
+helloWorld = pygame.image.load("PS circle.png")
 helloWorldSize = helloWorld.get_size()
 
-
-direction = (1, 1)
+sound = pygame.mixer.Sound("Pluralsight.wav")
+pygame.mixer.music.load("test.mp3")
+pygame.mixer.music.play(0)
 
 clock = pygame.time.Clock()
 
-# The game loop
 while 1:
     clock.tick(60)
 
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
+        if event.type == pygame.QUIT or event.type == pygame.K_ESCAPE:
+            pygame.quit()
             sys.exit()
+        if event.type == pygame.MOUSEBUTTONUP:
+            sound.stop()
+            sound.play()
 
     screen.fill((0, 0, 0))
 

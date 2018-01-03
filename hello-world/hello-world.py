@@ -9,11 +9,11 @@ windowSize = (800, 600)
 
 screen = pygame.display.set_mode(windowSize)
 
-helloWorld = pygame.image.load("PS circle.png")
+helloWorld = pygame.image.load("./hello-world/PS circle.png")
 helloWorldSize = helloWorld.get_size()
 
-sound = pygame.mixer.Sound("Pluralsight.wav")
-pygame.mixer.music.load("test.mp3")
+sound = pygame.mixer.Sound("./hello-world/Pluralsight.wav")
+pygame.mixer.music.load("./hello-world/test.mp3")
 pygame.mixer.music.play(0)
 
 clock = pygame.time.Clock()

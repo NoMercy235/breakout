@@ -26,6 +26,7 @@ class Constants:
         "BRICK-SPEED": os.path.join("assets", "speed.png"),
         "BRICK-LIFE": os.path.join("assets", "life.png"),
         "PAD": os.path.join("assets", "pad.png"),
+        "HIGH_SCORE": os.path.join("assets", "highscore.png"),
     }
 
     TEXTS = {

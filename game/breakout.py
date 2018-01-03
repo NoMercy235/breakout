@@ -12,9 +12,12 @@ class Breakout:
         self._level = Level(self)
         self._level.load_level(0)
 
-        self._pad = Pad((0, 0), 0)
+        self._pad = Pad(
+            (Constants.SCREEN_SIZE[0]/2, Constants.SCREEN_SIZE[1] - Constants.PAD_SIZE[1] - Constants.SPACE_BELOW_PAD),
+            pygame.image.load(Constants.SPRITES["PAD"])
+        )
         self._balls = [
-            Ball((0, 0), pygame.image.load(Constants.SPRITES["BALL"]), self)
+            Ball((400, 400), pygame.image.load(Constants.SPRITES["BALL"]), self),
         ]
 
         pygame.init()

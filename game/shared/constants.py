@@ -6,6 +6,7 @@ class Constants:
     INITIAL_LIVES = 5
     SCREEN_SIZE = [800, 600]
     PAD_SIZE = [139, 13]
+    SPACE_BELOW_PAD = 50
     FPS = 60
     BRICK = {
         "SIZE": [100, 30],
@@ -22,6 +23,7 @@ class Constants:
         "BRICK-NORMAL": os.path.join("assets", "standard.png"),
         "BRICK-SPEED": os.path.join("assets", "speed.png"),
         "BRICK-LIFE": os.path.join("assets", "life.png"),
+        "PAD": os.path.join("assets", "pad.png"),
     }
 
     TEXTS = {

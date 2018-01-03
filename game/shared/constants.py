@@ -8,7 +8,7 @@ class Constants:
     PAD_SIZE = [139, 13]
     FPS = 60
     BRICK = {
-        "SIZE": [800, 600],
+        "SIZE": [100, 30],
         "HP": 100,
         "LIVES": 1,
     }
@@ -19,6 +19,9 @@ class Constants:
 
     SPRITES = {
         "BALL": os.path.join("assets", "ball.png"),
+        "BRICK-NORMAL": os.path.join("assets", "standard.png"),
+        "BRICK-SPEED": os.path.join("assets", "speed.png"),
+        "BRICK-LIFE": os.path.join("assets", "life.png"),
     }
 
     TEXTS = {

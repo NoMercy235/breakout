@@ -1,4 +1,4 @@
-from game.shared import *
+from game.shared import GameObject, Constants, pygame
 
 
 class Ball(GameObject):

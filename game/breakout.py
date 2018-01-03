@@ -1,8 +1,6 @@
-import pygame
-
 from game import *
 from game.scenes import *
-from game.shared import Constants
+from game.shared import Constants, pygame
 
 
 class Breakout:
@@ -16,7 +14,7 @@ class Breakout:
 
         self._pad = Pad((0, 0), 0)
         self._balls = [
-            Ball((0, 0), 0, self)
+            Ball((0, 0), pygame.image.load(Constants.SPRITES["BALL"]), self)
         ]
 
         pygame.init()
@@ -70,14 +68,16 @@ class Breakout:
     def get_pad(self):
         return self._pad
 
-    def play_sound(self, sound):
-        pass
+    def play_sound(self, sound_index: int):
+        sound = self._sounds[sound_index]
+        sound.stop()
+        sound.play()
 
     def reduce_lives(self):
-        pass
+        self._lives -= 1
 
     def increase_lives(self):
-        pass
+        self._lives += 1
 
     def reset(self):
         pass

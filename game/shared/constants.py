@@ -1,4 +1,4 @@
-from collections import namedtuple
+import os
 
 
 class Constants:
@@ -15,6 +15,10 @@ class Constants:
     BALL = {
         "SIZE": [16, 16],
         "SPEED": 3,
+    }
+
+    SPRITES = {
+        "BALL": os.path.join("assets", "ball.png"),
     }
 
     TEXTS = {

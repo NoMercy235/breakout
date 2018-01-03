@@ -31,7 +31,7 @@ class Ball(GameObject):
         pass
 
     def update_position(self):
-        pass
+        self.set_position(pygame.mouse.get_pos())
 
     def is_dead(self):
         pass

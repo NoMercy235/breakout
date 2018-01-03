@@ -1,6 +1,6 @@
 import os
 import fileinput
-from game.bricks import Brick
+from game.bricks import Brick, LifeBrick, SpeedBrick
 from game.shared import pygame, Constants
 
 
@@ -29,16 +29,18 @@ class Level:
 
         for line in fileinput.input(os.path.join("assets", "levels", "level" + str(level) + ".dat")):
             for current_brick in line:
-                brick_image = None
+                brick = None
                 if current_brick == "1":
                     brick_image = pygame.image.load(Constants.SPRITES["BRICK-NORMAL"])
+                    brick = Brick([x, y], brick_image, self._game)
                 elif current_brick == "2":
                     brick_image = pygame.image.load(Constants.SPRITES["BRICK-SPEED"])
+                    brick = SpeedBrick([x, y], brick_image, self._game)
                 elif current_brick == "3":
                     brick_image = pygame.image.load(Constants.SPRITES["BRICK-LIFE"])
+                    brick = LifeBrick([x, y], brick_image, self._game)
 
-                if brick_image is not None:
-                    brick = Brick([x, y], brick_image, self._game)
+                if brick is not None:
                     self._bricks.append(brick)
                     self._bricks_left += 1
 

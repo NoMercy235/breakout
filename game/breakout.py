@@ -17,7 +17,7 @@ class Breakout:
             pygame.image.load(Constants.SPRITES["PAD"])
         )
         self._balls = [
-            Ball((400, 400), pygame.image.load(Constants.SPRITES["BALL"]), self),
+            Ball((0, 0), pygame.image.load(Constants.SPRITES["BALL"]), self),
         ]
 
         pygame.init()
@@ -83,7 +83,9 @@ class Breakout:
         self._lives += 1
 
     def reset(self):
-        pass
+        self._lives = Constants.INITIAL_LIVES
+        self._score = 0
+        self._level.load_level(0)
 
 
 Breakout().start()

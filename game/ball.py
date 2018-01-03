@@ -88,4 +88,8 @@ class Ball(GameObject):
         self.set_position(new_position)
 
     def is_dead(self):
-        pass
+        position = self.get_position()
+        size = self.get_size()
+        if position[1] + size[1] >= Constants.SCREEN_SIZE[1]:
+            return True
+        return False

@@ -3,7 +3,7 @@ import os
 
 class Constants:
 
-    INITIAL_LIVES = 5
+    INITIAL_LIVES = 1
     SCREEN_SIZE = [800, 600]
     PAD_SIZE = [139, 13]
     SPACE_BELOW_PAD = 50
@@ -16,6 +16,8 @@ class Constants:
     BALL = {
         "SIZE": [16, 16],
         "SPEED": 3,
+        "MAX_SPEED": 6,
+        "SPEED_INCREASE": 1,
     }
 
     SPRITES = {
@@ -28,4 +30,11 @@ class Constants:
 
     TEXTS = {
         "CAPTION": "Breakout in Python"
+    }
+
+    SCENES = {
+        "PLAYING": 0,
+        "GAME_OVER": 1,
+        "HIGH_SCORE": 2,
+        "MAIN_MENU": 3,
     }

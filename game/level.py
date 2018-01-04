@@ -25,6 +25,7 @@ class Level:
     def load_level(self, level):
         self._current_level = level
         self._bricks = []
+        self._bricks_left = 0
 
         x, y = 0, 0
 
@@ -52,6 +53,7 @@ class Level:
 
     def load_random_level(self):
         self._bricks = []
+        self._bricks_left = 0
 
         x, y = 0, 0
 
@@ -82,4 +84,10 @@ class Level:
             y += Constants.BRICK["SIZE"][1]
 
     def load_next_level(self):
-        pass
+        self._current_level += 1
+        file_name = os.path.join("assets", "levels", "level" + str(self._current_level) + ".dat")
+
+        if not os.path.exists(file_name):
+            self.load_random_level()
+        else:
+            self.load_level(self._current_level)

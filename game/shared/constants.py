@@ -27,6 +27,7 @@ class Constants:
         "BRICK-LIFE": os.path.join("assets", "life.png"),
         "PAD": os.path.join("assets", "pad.png"),
         "HIGH_SCORE": os.path.join("assets", "highscore.png"),
+        "MAIN_MENU": os.path.join("assets", "menu.png"),
     }
 
     SOUNDS = {

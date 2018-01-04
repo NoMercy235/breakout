@@ -10,6 +10,13 @@ class PlayingGameScene(Scene):
     def render(self):
         super().render()
         game = self.get_game()
+        level = game.get_level()
+        balls = game.get_balls()
+
+        if level.get_bricks_left() <= 0:
+            for ball in balls:
+                ball.set_is_moving(False)
+            level.load_next_level()
 
         if game.get_lives() <= 0:
             game.play_sound(Constants.SOUNDS["GAME_OVER"][0])
@@ -19,7 +26,6 @@ class PlayingGameScene(Scene):
         pad.set_position((pygame.mouse.get_pos()[0], pad.get_position()[1]))
         game.screen.blit(pad.get_sprite(), pad.get_position())
 
-        balls = game.get_balls()
         for ball in balls:
             # If you want balls to bounce on each other. Might remove.
             for other_ball in balls:
@@ -29,6 +35,7 @@ class PlayingGameScene(Scene):
             for brick in game.get_level().get_bricks():
                 if not brick.is_destroyed() and ball.is_moving() and ball.intersects(brick):
                     brick.hit()
+                    level.brick_hit()
                     game.play_sound(brick.get_hit_sound())
                     game.increase_score(brick.get_hp())
                     ball.change_direction(brick)

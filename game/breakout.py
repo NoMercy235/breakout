@@ -10,8 +10,8 @@ class Breakout:
         self._score = 0
 
         self._level = Level(self)
-        # self._level.load_level(0)
-        self._level.load_random_level()
+        self._level.load_level(0)
+        # self._level.load_random_level()
 
         self._pad = Pad(
             (Constants.SCREEN_SIZE[0]/2, Constants.SCREEN_SIZE[1] - Constants.PAD_SIZE[1] - Constants.SPACE_BELOW_PAD),
@@ -38,7 +38,14 @@ class Breakout:
 
         self._current_scene = 0
 
-        self._sounds = ()
+        self._sounds = (
+            pygame.mixer.Sound(Constants.SOUNDS["GAME_OVER"][1]),
+            pygame.mixer.Sound(Constants.SOUNDS["HIT_BRICK"][1]),
+            pygame.mixer.Sound(Constants.SOUNDS["HIT_BRICK_LIFE"][1]),
+            pygame.mixer.Sound(Constants.SOUNDS["HIT_BRICK_SPEED"][1]),
+            pygame.mixer.Sound(Constants.SOUNDS["HIT_WALL"][1]),
+            pygame.mixer.Sound(Constants.SOUNDS["HIT_PAD"][1]),
+        )
 
     def start(self):
         while 1:

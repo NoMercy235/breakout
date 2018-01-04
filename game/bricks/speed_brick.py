@@ -13,3 +13,6 @@ class SpeedBrick(Brick):
             if ball.get_speed() < Constants.BALL["MAX_SPEED"]:
                 ball.set_speed(ball.get_speed() + Constants.BALL["SPEED_INCREASE"])
         super().hit()
+
+    def get_hit_sound(self):
+        return Constants.SOUNDS["HIT_BRICK_SPEED"][0]

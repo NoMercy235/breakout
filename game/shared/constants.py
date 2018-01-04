@@ -29,6 +29,15 @@ class Constants:
         "HIGH_SCORE": os.path.join("assets", "highscore.png"),
     }
 
+    SOUNDS = {
+        "GAME_OVER": (0, os.path.join("assets", "GameOver.wav")),
+        "HIT_BRICK": (1, os.path.join("assets", "BrickHit.wav")),
+        "HIT_BRICK_LIFE": (2, os.path.join("assets", "ExtraLife.wav")),
+        "HIT_BRICK_SPEED": (3, os.path.join("assets", "SpeedUp.wav")),
+        "HIT_WALL": (4, os.path.join("assets", "WallBounce.wav")),
+        "HIT_PAD": (5, os.path.join("assets", "PadBounce.wav")),
+    }
+
     TEXTS = {
         "CAPTION": "Breakout in Python"
     }

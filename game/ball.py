@@ -72,10 +72,12 @@ class Ball(GameObject):
         if new_position[0] + size[0] >= Constants.SCREEN_SIZE[0]:
             self._direction[0] *= -1
             new_position = [Constants.SCREEN_SIZE[0] - size[0], new_position[1]]
+            self._game.play_sound(Constants.SOUNDS["HIT_WALL"][0])
 
         if new_position[0] <= 0:
             self._direction[0] *= -1
             new_position = [0, new_position[1]]
+            self._game.play_sound(Constants.SOUNDS["HIT_WALL"][0])
 
         if new_position[1] + size[1] >= Constants.SCREEN_SIZE[1]:
             self._direction[1] *= -1
@@ -84,6 +86,7 @@ class Ball(GameObject):
         if new_position[1] <= 0:
             self._direction[1] *= -1
             new_position = [new_position[0], 0]
+            self._game.play_sound(Constants.SOUNDS["HIT_WALL"][0])
 
         self.set_position(new_position)
 

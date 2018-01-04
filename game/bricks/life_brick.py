@@ -1,4 +1,5 @@
 from game.bricks import Brick
+from game.shared import Constants
 
 
 class LifeBrick(Brick):
@@ -10,3 +11,6 @@ class LifeBrick(Brick):
         game = self.get_game()
         game.increase_lives()
         super().hit()
+
+    def get_hit_sound(self):
+        return Constants.SOUNDS["HIT_BRICK_LIFE"][0]

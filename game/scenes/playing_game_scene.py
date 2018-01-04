@@ -12,6 +12,7 @@ class PlayingGameScene(Scene):
         game = self.get_game()
 
         if game.get_lives() <= 0:
+            game.play_sound(Constants.SOUNDS["GAME_OVER"][0])
             game.change_scene(Constants.SCENES["GAME_OVER"])
 
         pad = game.get_pad()
@@ -28,11 +29,13 @@ class PlayingGameScene(Scene):
             for brick in game.get_level().get_bricks():
                 if not brick.is_destroyed() and ball.is_moving() and ball.intersects(brick):
                     brick.hit()
+                    game.play_sound(brick.get_hit_sound())
                     game.increase_score(brick.get_hp())
                     ball.change_direction(brick)
                     break
 
             if ball.intersects(pad):
+                game.play_sound(Constants.SOUNDS["HIT_PAD"][0])
                 ball.change_direction(pad)
 
             ball.update_position()

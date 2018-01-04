@@ -21,22 +21,22 @@ class Constants:
     }
 
     SPRITES = {
-        "BALL": os.path.join("assets", "ball.png"),
-        "BRICK-NORMAL": os.path.join("assets", "standard.png"),
-        "BRICK-SPEED": os.path.join("assets", "speed.png"),
-        "BRICK-LIFE": os.path.join("assets", "life.png"),
-        "PAD": os.path.join("assets", "pad.png"),
-        "HIGH_SCORE": os.path.join("assets", "highscore.png"),
-        "MAIN_MENU": os.path.join("assets", "menu.png"),
+        "BALL": os.path.join("game", "assets", "ball.png"),
+        "BRICK-NORMAL": os.path.join("game", "assets", "standard.png"),
+        "BRICK-SPEED": os.path.join("game", "assets", "speed.png"),
+        "BRICK-LIFE": os.path.join("game", "assets", "life.png"),
+        "PAD": os.path.join("game", "assets", "pad.png"),
+        "HIGH_SCORE": os.path.join("game", "assets", "highscore.png"),
+        "MAIN_MENU": os.path.join("game", "assets", "menu.png"),
     }
 
     SOUNDS = {
-        "GAME_OVER": (0, os.path.join("assets", "GameOver.wav")),
-        "HIT_BRICK": (1, os.path.join("assets", "BrickHit.wav")),
-        "HIT_BRICK_LIFE": (2, os.path.join("assets", "ExtraLife.wav")),
-        "HIT_BRICK_SPEED": (3, os.path.join("assets", "SpeedUp.wav")),
-        "HIT_WALL": (4, os.path.join("assets", "WallBounce.wav")),
-        "HIT_PAD": (5, os.path.join("assets", "PadBounce.wav")),
+        "GAME_OVER": (0, os.path.join("game", "assets", "GameOver.wav")),
+        "HIT_BRICK": (1, os.path.join("game", "assets", "BrickHit.wav")),
+        "HIT_BRICK_LIFE": (2, os.path.join("game", "assets", "ExtraLife.wav")),
+        "HIT_BRICK_SPEED": (3, os.path.join("game", "assets", "SpeedUp.wav")),
+        "HIT_WALL": (4, os.path.join("game", "assets", "WallBounce.wav")),
+        "HIT_PAD": (5, os.path.join("game", "assets", "PadBounce.wav")),
     }
 
     TEXTS = {
@@ -49,3 +49,9 @@ class Constants:
         "HIGH_SCORE": 2,
         "MAIN_MENU": 3,
     }
+
+    HIGH_SCORE_PATH = os.path.join("game", "highscore.dat")
+
+    @classmethod
+    def LEVEL_PATH(cls, level):
+        return os.path.join("game", "assets", "levels", "level" + str(level) + ".dat")

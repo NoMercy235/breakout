@@ -29,7 +29,7 @@ class Level:
 
         x, y = 0, 0
 
-        for line in fileinput.input(os.path.join("assets", "levels", "level" + str(level) + ".dat")):
+        for line in fileinput.input(Constants.LEVEL_PATH(level)):
             for current_brick in line:
                 brick = None
                 if current_brick == "1":
@@ -85,7 +85,7 @@ class Level:
 
     def load_next_level(self):
         self._current_level += 1
-        file_name = os.path.join("assets", "levels", "level" + str(self._current_level) + ".dat")
+        file_name = Constants.LEVEL_PATH(self._current_level)
 
         if not os.path.exists(file_name):
             self.load_random_level()

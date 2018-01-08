@@ -1,3 +1,3 @@
-from game import *
+from game import Breakout
 
 Breakout().start()
